@@ -7,6 +7,7 @@ var
 numeroReal:real;
 numeroRealDoble:real;
 begin
+numeroRealDoble:= 0;
 write('Escribe un numero:');
 read(numeroReal);
 while ((numeroRealDoble/2)<>(numeroReal)) do
