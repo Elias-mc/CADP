@@ -37,4 +37,15 @@ Práctica 1 (parte 1) – Estructuras de control If y While/
 
 ---
 
-📌 _Cada resolución está en la misma carpeta, en el archivo indicado en la columna "Resolución"._
+<table>
+<tr>
+<td>
+
+📌 **Cada resolución está en la misma carpeta, en el archivo indicado en la columna "Resolución".**
+
+</td>
+<td>
+<img src="./gato.png" width="200">
+</td>
+</tr>
+</table>
