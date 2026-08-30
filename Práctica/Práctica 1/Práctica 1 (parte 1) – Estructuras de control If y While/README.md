@@ -24,16 +24,16 @@ Práctica 1 (parte 1) – Estructuras de control If y While/
 
 ## Ejercicios
 
-| #   | Consigna (resumen)                                                                                                                                                                 | Resolución     |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| 1   | Leer 2 enteros e informar cuál es el mayor (o si son iguales).                                                                                                                     | [Ver](./1.pas) |
-| 2   | Leer un número real e informar su valor absoluto.                                                                                                                                  | [Ver](./2.pas) |
-| 3   | Leer un real X y luego números reales hasta ingresar el doble de X.                                                                                                                | [Ver](./3.pas) |
-| 4   | Igual al 3, pero leyendo a lo sumo 10 números; si no aparece el doble de X, informarlo.                                                                                            | [Ver](./4.pas) |
-| 5   | Leer legajo y promedio de alumnos hasta legajo -1 (no se procesa); informar cantidad de alumnos, cantidad con promedio > 6.5 y % de destacados (promedio > 8.5) con legajo < 2500. | [Ver](./5.pas) |
-| 6   | Leer código, precio actual y nuevo precio de productos hasta código 32767 (se procesa); informar si el aumento supera el 10%.                                                      | [Ver](./6.pas) |
-| 7   | Leer tres caracteres e informar si los tres son vocales.                                                                                                                           | [Ver](./7.pas) |
-| 8   | Leer un carácter (`+` o `-`) y luego una secuencia de enteros hasta 0; aplicar la operación e imprimir el resultado.                                                               | [Ver](./8.pas) |
+| #   | Consigna (resumen)                                                                                                                                                                 | Resolución                        |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| 1   | Leer 2 enteros e informar cuál es el mayor (o si son iguales).                                                                                                                     | [Ver](./1.pas)                    |
+| 2   | Leer un número real e informar su valor absoluto.                                                                                                                                  | [Ver](./2.pas)                    |
+| 3   | Leer un real X y luego números reales hasta ingresar el doble de X.                                                                                                                | [Ver](./3.pas)                    |
+| 4   | Igual al 3, pero leyendo a lo sumo 10 números; si no aparece el doble de X, informarlo.                                                                                            | [Ver](./4.pas)                    |
+| 5   | Leer legajo y promedio de alumnos hasta legajo -1 (no se procesa); informar cantidad de alumnos, cantidad con promedio > 6.5 y % de destacados (promedio > 8.5) con legajo < 2500. | [Ver](./5_1.pas) [Ver](./5_2.pas) |
+| 6   | Leer código, precio actual y nuevo precio de productos hasta código 32767 (se procesa); informar si el aumento supera el 10%.                                                      | [Ver](./6.pas)                    |
+| 7   | Leer tres caracteres e informar si los tres son vocales.                                                                                                                           | [Ver](./7.pas)                    |
+| 8   | Leer un carácter (`+` o `-`) y luego una secuencia de enteros hasta 0; aplicar la operación e imprimir el resultado.                                                               | [Ver](./8.pas)                    |
 
 ---
 
