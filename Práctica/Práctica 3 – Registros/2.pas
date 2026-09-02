@@ -46,18 +46,21 @@
                 begin
                         if ( c.anio = 2019) then
                                 cant2019 := cant2019 + 1 ;
-                        if (c.mes = 'enero' or c.mes = 'febrero' c.mes = 'marzo') then
+                        if (c.mes = 'enero') or (c.mes = 'febrero') or (c.mes = 'marzo') then
                                 cantVerano := cantVerano + 1 ;
                         if (c.dia <= 10) then
                                 cantDias10 := cantDias10 + 1 ;
-                        leer(x)
+                        leer(c);
                 end;
 
         end;
         var
                 cant2019 : integer;
-                cantDias10:integer
+                cantDias10:integer;
                 cantVerano:integer;
         begin
-                realizado(cant2019,cantVerano,cantDias10);
-                write('Esta es la cantidad del 2019: ',cant2019)
+                realizar(cant2019,cantVerano,cantDias10);
+                write('Esta es la cantidad del 2019: ',cant2019);
+                write('Esta es la cantidad de meses de verano: ',cantVerano);
+                write('Este es la cantidad de dias menos a 10: ',cantDias10);
+        end.
