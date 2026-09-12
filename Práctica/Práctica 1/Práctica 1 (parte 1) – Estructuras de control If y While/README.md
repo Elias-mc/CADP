@@ -50,3 +50,14 @@ Práctica 1 (parte 1) – Estructuras de control If y While/
     </td>
   </tr>
 </table>
+
+## ☕ Invitame un cafecito
+
+Si esta práctica te salva de un `while` infinito, podés invitarme un cafecito.
+Prometo compartirlo con el compilador para que deje de quejarse.
+
+<p align="center">
+  <a href="https://cafecito.app/elias_mk">
+    <img width="572" alt="Invitame un cafecito" src="https://github.com/user-attachments/assets/8e0f827e-d147-41bf-9dc3-358d9113342f" />
+  </a>
+</p>

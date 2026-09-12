@@ -48,3 +48,14 @@ Práctica 1 (parte 2) – Estructuras de control For y Repeat/
     </td>
   </tr>
 </table>
+
+## ☕ Invitame un cafecito
+
+Si estos ejercicios te ayudan a repetir menos errores, podés invitarme un
+cafecito. Cada taza suma y ningún `repeat-until` queda con sed.
+
+<p align="center">
+  <a href="https://cafecito.app/elias_mk">
+    <img width="572" alt="Invitame un cafecito" src="https://github.com/user-attachments/assets/8e0f827e-d147-41bf-9dc3-358d9113342f" />
+  </a>
+</p>

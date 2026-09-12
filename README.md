@@ -61,3 +61,15 @@ mantener una navegación clara:
 El contenido disponible corresponde a las prácticas incorporadas hasta el
 momento. Las resoluciones pueden seguir recibiendo mejoras y correcciones a
 medida que se agreguen nuevos ejercicios.
+
+## Invitame un cafecito
+
+Si este repositorio te ayuda a aprobar, practicar o simplemente a sobrevivir
+al próximo ejercicio de Pascal, podés invitarme un cafecito. Prometo usarlo
+para programar más y pelearme menos con los `while`.
+
+<p align="center">
+  <a href="https://cafecito.app/elias_mk">
+    <img width="572" alt="Invitame un cafecito" src="https://github.com/user-attachments/assets/8e0f827e-d147-41bf-9dc3-358d9113342f" />
+  </a>
+</p>

@@ -39,3 +39,14 @@ Actividades Adicionales - Est. de Control - Máximos y Mínimos/
     </td>
   </tr>
 </table>
+
+## ☕ Invitame un cafecito
+
+Si encontraste el máximo, el mínimo y todavía te queda energía, podés
+invitarme un cafecito. Es más fácil que encontrar un error escondido.
+
+<p align="center">
+  <a href="https://cafecito.app/elias_mk">
+    <img width="572" alt="Invitame un cafecito" src="https://github.com/user-attachments/assets/8e0f827e-d147-41bf-9dc3-358d9113342f" />
+  </a>
+</p>
