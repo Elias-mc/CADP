@@ -15,8 +15,6 @@ var
     codigo:integer;
     precioActual:real;
     precioNuevo:real;
-    diferencia: real;
-    porcentaje:real;
 begin
 
     repeat
@@ -26,11 +24,9 @@ begin
         readln(precioActual);
         write('Escriba el precio Nuevo:');
         readln(precioNuevo);
-        diferencia := precioNuevo - precioActual;
-        porcentaje:= (diferencia/precioActual)*100;
-        if (porcentaje < 10) then
+        if (precioNuevo <= precioActual * 1.10) then
             write('El aumento de precio del producto ',codigo,' no supera el 10%')
         else
-            write('El aumento de precio del producto ',codigo, ' es superior al 10%”')
+            write('El aumento de precio del producto ',codigo, ' es superior al 10%');
     until (codigo = 32767);
 end.

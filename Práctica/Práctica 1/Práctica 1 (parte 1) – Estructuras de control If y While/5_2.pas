@@ -17,6 +17,7 @@ begin
     cantidadAlumnos:= 0;
     legajo:= 0;
     AlumnosSuperiores:= 0;
+    alumnoDestacados:= 0;
     write('Escribe el legajo:');
     read(legajo);
     while (legajo <> -1) do
@@ -33,4 +34,8 @@ begin
         end;
     writeln('Existen esta cantidad de alumnos: ',cantidadAlumnos);
     writeln('Alumnos Superiores al 6.5: ',AlumnosSuperiores);
-    writeln('alumno destacados: ',(cantidadAlumnos * alumnoDestacados)/100);
+    if cantidadAlumnos > 0 then
+        writeln('Porcentaje de alumnos destacados: ',
+                (alumnoDestacados * 100.0) / cantidadAlumnos:0:2, '%')
+    else
+        writeln('Porcentaje de alumnos destacados: 0%');

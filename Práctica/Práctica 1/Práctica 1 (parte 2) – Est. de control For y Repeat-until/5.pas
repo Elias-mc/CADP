@@ -9,10 +9,13 @@
         var
             numero,maximo,minimo,total:integer;
         begin
-            maximo := -1;
-            minimo := 9999;
-            total := 0;
-            repeat
+            write('Escriba un numero: ');
+            readln(numero);
+            maximo := numero;
+            minimo := numero;
+            total := numero;
+            while numero <> 100 do
+            begin
                 write('Escriba un numero: ');
                 readln(numero);
                 if maximo < numero then
@@ -20,7 +23,7 @@
                 if minimo > numero then
                     minimo := numero;
                 total:= numero + total;
-            until(numero = 100);
+            end;
             write('Numero maximo : ', maximo);
             write('Numero minimo :', minimo);
             write('Total : ', total);

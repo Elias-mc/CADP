@@ -9,26 +9,31 @@
 
 program untitled;
 var
-    caracter : string;
+    caracter : char;
     numero: integer;
     resultado: integer;
 begin
     write('Escriba un caracter: ');
     readln(caracter);
-    if caracter = '+' or caracter = '-' then
+    if (caracter = '+') or (caracter = '-') then
         begin
             write('Escriba un numero: ');
             readln(numero);
-            resultado := numero
-            while (numero <> 0) do
+            resultado := numero;
+            if numero <> 0 then
+            begin
+                write('Escriba un numero: ');
+                readln(numero);
+                while (numero <> 0) do
                 begin
                     if caracter = '+' then
                         resultado := resultado + numero
-                    if caracter = '-' then
-                        resultado := resultado - numero
+                    else
+                        resultado := resultado - numero;
                     write('Escriba un numero: ');
                     readln(numero);
                 end;
+            end;
             write(resultado)
         end
     else
