@@ -6,15 +6,17 @@
 program untitled;
 
 var
-	Numero_Real: real;
-	Numero_Absoluto: real;
-begin
-	write('Ingrese un numero Real ');
-	read(Numero_Real);
-	if(Numero_Real<0) then
-		Numero_Absoluto:=-(Numero_Real);
-	if(Numero_Real>=0) then
-		Numero_Absoluto:= Numero_Real;
-	write('Su numero absoluto es: ', Numero_Absoluto:2:0);
+    Numero_Real: real;
+    Numero_Absoluto: real;
 
+begin
+    write('Ingrese un numero real: ');
+    readln(Numero_Real);
+
+    if Numero_Real < 0 then
+        Numero_Absoluto := -Numero_Real
+    else
+        Numero_Absoluto := Numero_Real;
+
+    writeln('Su numero absoluto es: ', Numero_Absoluto:0:2);
 end.

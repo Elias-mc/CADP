@@ -30,35 +30,36 @@
 // La empresa 41 es la que mayor dinero posee invertido ($167000.22).
 // Hay 3 empresas con inversiones por más de $50000
 
-        program untitled;
-        var
-            codigo,cantidadInversiones,i,codigoMaximo,cantidad50000: integer;
-            monto,montoTotal,montoPromedio,MaxMontoTotal:real;
-        begin
-            cantidad50000 := 0;
-            MaxMontoTotal:= -1;
-            repeat
-                write('Escribe el codigo: ');
-                readln(codigo);
-                write('Escribe la cantidad Invertida: ');
-                readln(cantidadInversiones);
-                montoTotal:= 0;
-                for i := 1 to cantidadInversiones do
-                    begin
-                        write('Escribe el monto : ');
-                        readln(monto);
-                        montoTotal:= montoTotal + monto;
-                    end;
-                montoPromedio := montoTotal/cantidadInversiones;
-                if MaxMontoTotal < montoTotal then
-                    begin
-                        MaxMontoTotal := montoTotal;
-                        codigoMaximo := codigo;
-                    end;
-                if montoTotal > 50000 then
-                    cantidad50000 := cantidad50000 + 1;
-                write('Resultado del análisis: Empresa ',codigo, ' Monto promedio ',montoPromedio);
-            until (codigo = 100);
-            writeln('La empresa ',codigoMaximo,' es la que mayor dinero posee invertido (',MaxMontoTotal,').');
-            writeln('Hay ',cantidad50000,' empresas con inversiones por más de $50000');
-        end;
+
+program untitled;
+var
+    codigo,cantidadInversiones,i,codigoMaximo,cantidad50000: integer;
+    monto,montoTotal,montoPromedio,MaxMontoTotal:real;
+begin
+    cantidad50000 := 0;
+    MaxMontoTotal:= -1;
+    repeat
+        write('Escribe el codigo: ');
+        readln(codigo);
+        write('Escribe la cantidad Invertida: ');
+        readln(cantidadInversiones);
+        montoTotal:= 0;
+        for i := 1 to cantidadInversiones do
+            begin
+                write('Escribe el monto : ');
+                readln(monto);
+                montoTotal:= montoTotal + monto;
+            end;
+        montoPromedio := montoTotal/cantidadInversiones;
+        if (MaxMontoTotal < montoTotal) then
+            begin
+                MaxMontoTotal := montoTotal;
+                codigoMaximo := codigo;
+            end;
+        if montoTotal > 50000 then
+            cantidad50000 := cantidad50000 + 1;
+        write('Resultado del análisis: Empresa ',codigo, ' Monto promedio ',montoPromedio);
+    until (codigo = 100);
+    writeln('La empresa ',codigoMaximo,' es la que mayor dinero posee invertido (',MaxMontoTotal,').');
+    writeln('Hay ',cantidad50000,' empresas con inversiones por más de $50000');
+end.

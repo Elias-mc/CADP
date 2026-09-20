@@ -5,19 +5,19 @@
 program untitled;
 
 var
-  num1,num2:integer;
+    num1, num2: integer;
+
 begin
     writeln('Escribe tu primer numero:');
     readln(num1);
-    writeln('Escribe tu segundo numero');
+
+    writeln('Escribe tu segundo numero:');
     readln(num2);
 
-    if (num1 = num2) then
-        writeln('Los números leídos son iguales')
-    else if (num1 >= num2) then
-        writeln('Este es mayor: ',num1,' que ', num2)
+    if num1 = num2 then
+        writeln('Los numeros leidos son iguales')
+    else if num1 > num2 then
+        writeln('Este es mayor: ', num1, ' que ', num2)
     else
-        writeln('Este es mayor: ',num2,' que ', num1)
+        writeln('Este es mayor: ', num2, ' que ', num1);
 end.
-
-var

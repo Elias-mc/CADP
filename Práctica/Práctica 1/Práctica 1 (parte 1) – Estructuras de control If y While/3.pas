@@ -4,16 +4,21 @@
 program untitled;
 
 var
-numeroReal:real;
-numeroRealDoble:real;
+    numeroReal: real;
+    numeroRealDoble: real;
+
 begin
-numeroRealDoble:= 0;
-write('Escribe un numero:');
-read(numeroReal);
-while ((numeroRealDoble/2)<>(numeroReal)) do
+    write('Escribe un numero: ');
+    readln(numeroReal);
+
+    write('Escribe otro numero: ');
+    readln(numeroRealDoble);
+
+    while numeroRealDoble <> numeroReal * 2 do
     begin
-        write('Escribe otro numero:');
+        write('No es el doble. Escribe otro numero: ');
         readln(numeroRealDoble);
     end;
-writeln('El numero q es el doble es ',numeroRealDoble:2:1);
+
+    writeln('El numero que es el doble es: ', numeroRealDoble:0:1);
 end.

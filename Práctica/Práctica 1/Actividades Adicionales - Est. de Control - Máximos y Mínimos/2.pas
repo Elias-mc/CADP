@@ -34,113 +34,158 @@
 // en tiempo y forma y con al menos el 40% de respuestas correctas.
 
 
-        program untitled;
-        var
-            legajo,i,presentes,IngresanteEnCondicion,recursanteEnCondicion,recursanteCantidad,IngresanteCantidad,cantidadAlumnos6:integer;
-            cantidadAprobaronTodo,cantZero,cant10,max10,max10_2,codmax1,codmax2,cant0,max0_1,max0_2,cod0_1,cod0_2:integer;
-            condicion:string;
-            nota,notaTotal:real;
-            sacocero:bool;
+program untitled;
+
+var
+    legajo, i, presentes, IngresanteEnCondicion, recursanteEnCondicion,
+    recursanteCantidad, IngresanteCantidad, cantidadAlumnos6: integer;
+
+    cantidadAprobaronTodo, cantZero, cant10, max10, max10_2,
+    codmax1, codmax2, cant0, max0_1, max0_2, cod0_1, cod0_2: integer;
+
+    condicion: string;
+    nota, notaTotal: real;
+    sacocero: boolean;
+
+begin
+    recursanteCantidad := 0;
+    recursanteEnCondicion := 0;
+    IngresanteCantidad := 0;
+    IngresanteEnCondicion := 0;
+    cantidadAprobaronTodo := 0;
+    cantidadAlumnos6 := 0;
+    cantZero := 0;
+
+    max10 := -1;
+    max10_2 := -1;
+    max0_1 := -1;
+    max0_2 := -1;
+
+    write('Escribe el legajo: ');
+    readln(legajo);
+
+    while (legajo <> -1) do
+    begin
+        sacocero := false;
+        presentes := 0;
+        notaTotal := 0;
+        cant10 := 0;
+        cant0 := 0;
+
+        write('Escribe tu condicion: ');
+        readln(condicion);
+
+        if (condicion = 'I') then
+            IngresanteCantidad := IngresanteCantidad + 1
+        else
+            recursanteCantidad := recursanteCantidad + 1;
+
+        for i := 1 to 5 do
         begin
-            recursanteCantidad:= 0;
-            recursanteEnCondicion := 0;
-            IngresanteCantidad:= 0;
-            IngresanteEnCondicion := 0;
-            cantidadAprobaronTodo:= 0;
-            cantidadAlumnos6:=0;
-            cantZero:= 0;
-            max10:= -1;
-            max10_2:= -1;
-            max0_1 := -1;
-            max0_2 := -1 ;
+            write('Escribe la nota: ');
+            readln(nota);
 
-            write('Escribe el legajo: ');
-            readln(legajo);
-            while (legajo <> -1) do
-                begin
-                    sacocero:= false;
-                    presentes:= 0;
-                    notaTotal:= 0;
-                    cant10:= 0;
-                    cant0 := 0;
-                    write('Escribe tu condicion: ');
-                    readln(condicion);
+            { Una nota >= 4 significa Presente }
+            if (nota >= 4) then
+                presentes := presentes + 1;
 
-                    if (condicion = 'I') then
-                        IngresanteCantidad := IngresanteCantidad + 1;
-                    else
-                        recursanteCantidad:= recursanteCantidad + 1;
+            notaTotal := notaTotal + nota;
+
+            if (nota = 0) then
+                sacocero := true;
+
+            if (nota = 10) then
+                cant10 := cant10 + 1;
+
+            if (nota = 0) then
+                cant0 := cant0 + 1;
+        end;
+
+        { Busca los dos alumnos con mayor cantidad de 10 }
+        if cant10 > max10 then
+        begin
+            max10_2 := max10;
+            codmax2 := codmax1;
+
+            max10 := cant10;
+            codmax1 := legajo;
+        end
+        else if cant10 > max10_2 then
+        begin
+            max10_2 := cant10;
+            codmax2 := legajo;
+        end;
+
+        { Busca los dos alumnos con mayor cantidad de 0 }
+        if cant0 > max0_1 then
+        begin
+            max0_2 := max0_1;
+            cod0_2 := cod0_1;
+
+            max0_1 := cant0;
+            cod0_1 := legajo;
+        end
+        else if cant0 > max0_2 then
+        begin
+            max0_2 := cant0;
+            cod0_2 := legajo;
+        end;
+
+        //  Cantidad de alumnos con al menos un cero
+        if sacocero then
+            cantZero := cantZero + 1;
+
+        //  Cantidad de alumnos con promedio mayor a 6.5
+        if (notaTotal / 5 > 6.5) then
+            cantidadAlumnos6 := cantidadAlumnos6 + 1;
+
+        { Cantidad de alumnos que aprobaron todas las autoevaluaciones }
+        if presentes = 5 then
+            cantidadAprobaronTodo := cantidadAprobaronTodo + 1;
+
+        { Para rendir necesita al menos 4 presentes de 5 (75%) }
+        if presentes >= 4 then
+        begin
+            if condicion = 'I' then
+                IngresanteEnCondicion := IngresanteEnCondicion + 1
+            else
+                recursanteEnCondicion := recursanteEnCondicion + 1;
+        end;
+
+        write('Escribe el legajo: ');
+        readln(legajo);
+    end;
 
 
-                    for i:= 1 to 5 do
-                        begin
-                            write('Escribe la nota: ');
-                            readln(nota);
-                            if (nota * 10 >= 40) then
-                                presentes := presentes + 1;
-                            notaTotal:= notaTotal + nota;
-                            if (nota = 0) then
-                                sacocero := true;
-                            if (nota = 10) then
-                                cant10 := cant10 + 1 ;
-                            if (nota = 0) then
-                                cant0 := cant0 + 1;
-                        end;
+    writeln('Cantidad de alumnos INGRESANTES en condiciones: ',
+            IngresanteEnCondicion);
+
+    if IngresanteCantidad > 0 then
+        writeln('Porcentaje sobre el total de INGRESANTES: ',
+                (IngresanteEnCondicion / IngresanteCantidad) * 100:0:2, '%')
+    else
+        writeln('Porcentaje sobre el total de INGRESANTES: 0%');
 
 
-                    if cant10 > max10 then                                  //Busca los alumnos con mayor cantidad de 10
-                        begin
-                            max10_2 := max10;
-                            codmax2 := codmax1;
-                            max10 := cant10;
-                            codmax1 := legajo;
-                        end
-                    else if cant10 > max10_2 then
-                        begin
-                            max10_2 := cant10;
-                            codmax2 := legajo;
-                        end;
+    writeln('Cantidad de alumnos RECURSANTES en condiciones: ',
+            recursanteEnCondicion);
 
-                    if cant0 > max0_1 then                                  //Busca los alumnos con mayor cantidad de 10
-                        begin
-                            max0_2 := max0_1;
-                            cod0_2 := cod0_1;
-                            max0_1 := cant0;
-                            cod0_1 := legajo;
-                        end
-                    else if cant0 > max0_2 then
-                        begin
-                            max0_2 := cant0;
-                            cod0_2 := legajo;
-                        end;
+    if recursanteCantidad > 0 then
+        writeln('Porcentaje sobre el total de RECURSANTES: ',
+                (recursanteEnCondicion / recursanteCantidad) * 100:0:2, '%')
+    else
+        writeln('Porcentaje sobre el total de RECURSANTES: 0%');
 
-                    if sacocero then                                        // cantidad de alumnos con cero
-                        cantZero:= cantZero + 1 ;
+    writeln;
 
-                    if notaTotal/5 > 6.5 then                               //Sacamos la nota promedio
-                        cantidadAlumnos6:= cantidadAlumnos6 + 1;
+    writeln('Cantidad de alumnos que aprobaron todas las autoevaluaciones: ',cantidadAprobaronTodo);
 
-                    if presentes = 5 then
-                        cantidadAprobaronTodo := cantidadAprobaronTodo + 1;
+    writeln('Cantidad de alumnos cuya nota promedio fue mayor a 6.5 puntos: ',cantidadAlumnos6);
 
-                    if ((presentes / 5) * 100 ) >= 75 then
-                        begin
-                            if condicion = 'I' then
-                                IngresanteEnCondicion := IngresanteEnCondicion + 1 ;
-                            else
-                                recursanteEnCondicion := recursanteEnCondicion + 1;
-                        end;
-                    write('Escribe el legajo: ');
-                    readln(legajo);
-                end;
-            write('Cantidad de alumnos INGRESANTES en condiciones ',IngresanteEnCondicion);
-            write('Porcentaje sobre el total de alumnos INGRESANTES: ',(IngresanteEnCondicion/IngresanteCantidad)*100);
-            write('Cantidad de alumnos RECURSANTES en condiciones ',recursanteEnCondicion);
-            write('Porcentaje sobre el total de alumnos RECURSANTES: ',(recursanteEnCondicion/recursanteCantidad)*100);
-            write('Cantidad de alumnos que aprobaron todas las autoevaluaciones: ',cantidadAprobaronTodo);
-            write('Cantidad de alumnos cuya nota promedio fue mayor a 6.5 puntos: ',cantidadAlumnos6);
-            write('Cantidad de alumnos que obtuvieron cero puntos en al menos una autoevaluación: ',cantZero);
-            write('Código de los dos alumnos con mayor cantidad de autoevaluaciones con nota 10: ',codmax1,codmax2);
-            write('Código de los dos alumnos con mayor cantidad de autoevaluaciones con nota 0: ',cod0_1,cod0_2);
+    writeln('Cantidad de alumnos que obtuvieron cero puntos en al menos una autoevaluacion: ',cantZero);
 
-        end.
+    writeln('Codigo de los dos alumnos con mayor cantidad de autoevaluaciones con nota 10: ',codmax1, ' y ', codmax2);
+
+    writeln('Codigo de los dos alumnos con mayor cantidad de autoevaluaciones con nota 0: ',cod0_1, ' y ', cod0_2);
+
+end.
